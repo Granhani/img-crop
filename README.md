@@ -56,7 +56,7 @@ HTMl:
 
                             <!-- cropPath: o caminho de destino onde o arquivo será salvo -->
                             <!-- diretório e nome do arquivo -->
-                            <input type="text" name="cropPath"  value="fotos/crop/cortada.png">
+                            <input type="text" name="cropPath"  value="foto/imgs/crop.jpg">
                         </div>
                     </form>
                 </div>
@@ -69,24 +69,53 @@ HTMl:
     </body>
 </html>
 ```
+Options
+-------------------------------
++ **transparent**
+
+So that the final image is saved with transparent background.<br>
+CropAccept should be '.png' And the cropPath should end with '.png'
+```
+<input type="text" name="cropAccept" value=".png">
+<input type="text" name="cropPath"  value="foto/imgs/crop.png">
+```
+para que a imagem final seja salva com fundo transparente.<br>
+o cropAccept deve ser '.png' e o cropPath deve terminar com '.png'
 
 Event list
 -------------------------------
 
 + **sending**
-Called immediately before each file is sent.
-Gets the formData objects as the second parameter,
+
+Called immediately before each file is sent.<br>
+Gets the formData objects as the second parameter, 
 So that you can modify it (for example, to change the destination path 'cropPath') or add additional data.
 
 ```
 $('#myForm').on('sending', function(event, formData) {
-    formData.append('cropPath', 'foto/crop.jpg');
+    formData.append('cropPath', 'foto/imgs/crop.jpg');
 });
 ```
-Chamado imediatamente antes de cada arquivo ser enviado.
-Obtém os objetos formData como segundo parâmetro,
+Chamado imediatamente antes de cada arquivo ser enviado.<br>
+Obtém os objetos formData como segundo parâmetro, 
 para que você possa modificá-lo (por exemplo, para alterar o caminho de destino 'cropPath') ou adicionar dados adicionais.
 	
++ **complete**
+
+Called when the upload is complete, successful or erroneous.<br>
+Gets the response from the server as the second argument. 
+```
+$('#myForm').on('complete', function(event, ret) {
+    ret.dir = 'foto/imgs/'; //diretório onde a imagem foi salva
+    ret.fileName = 'crop.jpg'; //nome do arquivo
+    ret.path = 'foto/imgs/crop.jpg'; //caminho completo da imagem
+    ret.status = 'ok ou erro';
+    ret.coffin = ''; //em caso de erro, mensagem de erro
+});
+```
+Chamado quando o upload for concluído, com sucesso ou com erro.<br>
+Obtém a resposta do servidor como o segundo argumento.
+
 License
 -------------------------------
 [Included as per request of an user in github]
