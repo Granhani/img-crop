@@ -69,7 +69,8 @@ HTMl:
     </body>
 </html>
 ```
-Options
+
+Event list
 -------------------------------
 
 + **sending**
@@ -82,9 +83,11 @@ Chamado imediatamente antes de cada arquivo ser enviado.
 Obtém os objetos formData como segundo parâmetro,
 para que você possa modificá-lo (por exemplo, para alterar o caminho de destino 'cropPath') ou adicionar dados adicionais.
 
-`$('#myForm').on('sending', function(event, formData) {`
-    `formData.append('cropPath', 'foto/crop.jpg');`
-`});`
+```
+$('#myForm').on('sending', function(event, formData) {
+    formData.append('cropPath', 'foto/crop.jpg');
+});
+```
 	
 License
 -------------------------------
