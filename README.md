@@ -73,6 +73,7 @@ Options
 -------------------------------
 
 + **sending**
+
 Called immediately before each file is sent.
 Gets the formData objects as the second parameter,
 So that you can modify it (for example, to change the destination path 'cropPath') or add additional data.
@@ -81,9 +82,9 @@ Chamado imediatamente antes de cada arquivo ser enviado.
 Obtém os objetos formData como segundo parâmetro,
 para que você possa modificá-lo (por exemplo, para alterar o caminho de destino 'cropPath') ou adicionar dados adicionais.
 
-`$('#myForm').on('sending', function(event, formData) {
-    formData.append('cropPath', 'foto/crop.jpg');
-});`
+`$('#myForm').on('sending', function(event, formData) {`
+    `formData.append('cropPath', 'foto/crop.jpg');`
+`});`
 	
 License
 -------------------------------
