@@ -6,20 +6,20 @@ Requirements
 - jQuery >= 1.11.0 (http://jquery.com/download/)
 - jQuery-ui >= 1.11.4 (http://jqueryui.com/download/)
 
-Instalação
+Installation
 -------------------------------
-Copie o diretório imgcrop para dentro da pasta do seu projeto.
-inclua no html os seguintes arquivos.
+Copy the imgcrop directory into the folder of your project.
+Include non html the following files.
 
-1. imgcrop/css/img-crop.css
-2. jquery.js
-3. imgcrop/js/jquery-ui.min.js
-4. imgcrop/js/img-crop.js 
++ Include `imgcrop/css/img-crop.css`
++ Include `https://code.jquery.com/jquery-3.1.1.min.js`
++ Include `imgcrop/js/jquery-ui.js`
++ Include `imgcrop/js/img-crop.js`
 
 Quick Start
 -------------------------------
 
-1. HTMl:
+HTMl:
 ```
 <!DOCTYPE html>
 <html>
@@ -37,12 +37,12 @@ Quick Start
                     <form id="myForm" class="formCrop">
                         <div class="form-group text-center">
                             <img src="img/foto.jpg" class="img-responsive retCrop">
-                            <!-- a class .openCrop inicia a função -->
                             <!-- botão para adicionar a nova imagem -->
                             <a href="#myForm" class="btn btn-info openCrop pull-right">
                                 <i class="glyphicon glyphicon-picture"></i> Alterar Imagem
                             </a>
                             <!-- o botão não precisa estar dentro do formulário -->
+                            <!-- a class .openCrop inicia a função -->
                             <!-- basta colocar no href o id do form que contem: cropSize, cropPath -->
                         </div>
                         <div class="hidden">
@@ -69,9 +69,22 @@ Quick Start
     </body>
 </html>
 ```
+Options
+-------------------------------
 
++ **sending**
+Called immediately before each file is sent.
+Gets the formData objects as the second parameter,
+So that you can modify it (for example, to change the destination path 'cropPath') or add additional data.
 
-		
+Chamado imediatamente antes de cada arquivo ser enviado.
+Obtém os objetos formData como segundo parâmetro,
+para que você possa modificá-lo (por exemplo, para alterar o caminho de destino 'cropPath') ou adicionar dados adicionais.
+
+`$('#myForm').on('sending', function(event, formData) {
+    formData.append('cropPath', 'foto/crop.jpg');
+});`
+	
 License
 -------------------------------
 [Included as per request of an user in github]
