@@ -20,8 +20,6 @@ Quick Start
 -------------------------------
 
 HTMl:
-
-+ **Basic**
 ```
 <!DOCTYPE html>
 <html>
@@ -38,15 +36,25 @@ HTMl:
                 <div class="col-xs-12 col-md-6 col-md-offset-3">
                     <form id="myForm1" class="formCrop">
                         <div class="form-group text-center">
+                            <label>Imagem pgn com fundo transparente</label>
                             <img src="demo/img/logo.png" class="img-responsive retCrop">
+                            <!-- a class .openCrop inicia a função -->
+                            <!-- botão para adicionar a nova imagem -->
                             <a href="#myForm1" class="btn btn-info openCrop">
                                 <i class="glyphicon glyphicon-picture"></i> Alterar Imagem
                             </a>
+                            <!-- o botão não precisa estar dentro do formulário -->
+                            <!-- basta colocar no href o id do form que contem: inputFile, sizecut, filePath -->
                         </div>
                         <div class="hidden">
                             <input type="file" name="inputFile" accept="image/.png">
+                            <!-- sizecut: o tamanho que a imagem final deve ter -->
                             <input type="text" name="sizecut" value="500x150">
+                            <!-- dimensões do corte width x height -->
+
+                            <!-- filePath: o caminho de destino onde o arquivo será salvo -->
                             <input type="text" name="filePath" value="foto/imgs/logo.png">
+                            <!-- diretório e nome do arquivo -->
                         </div>
                     </form>
                 </div>
@@ -58,6 +66,22 @@ HTMl:
         <script type="text/javascript" src="libs/imgcrop/js/img-crop.js"></script>
     </body>
 </html>
+```
++ **Basic**
+```
+<form id="myForm1" class="formCrop">
+    <div class="form-group text-center">
+        <img src="demo/img/logo.png" class="img-responsive retCrop">
+        <a href="#myForm1" class="btn btn-info openCrop">
+            <i class="glyphicon glyphicon-picture"></i> Alterar Imagem
+        </a>
+    </div>
+    <div class="hidden">
+        <input type="file" name="inputFile" accept="image/.png">
+        <input type="text" name="sizecut" value="500x150">
+        <input type="text" name="filePath" value="foto/imgs/logo.png">
+    </div>
+</form>
 ```
 Options
 -------------------------------
