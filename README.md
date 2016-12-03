@@ -68,8 +68,6 @@ HTMl:
         <a href="#myForm1" class="btn btn-info openCrop">
             <i class="glyphicon glyphicon-picture"></i> Alterar Imagem
         </a>
-        <!-- o botão não precisa estar dentro do formulário -->
-        <!-- basta colocar no href o id do form que contem: inputFile, sizecut, filePath -->
     </div>
     <div class="hidden">
         <input type="file" name="inputFile" accept="image/.png">
