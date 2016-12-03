@@ -20,6 +20,8 @@ Quick Start
 -------------------------------
 
 HTMl:
+
++ **Basic**
 ```
 <!DOCTYPE html>
 <html>
@@ -34,29 +36,27 @@ HTMl:
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-md-6 col-md-offset-3">
-                    <form id="myForm" class="formCrop">
+                    <form id="myForm1" class="formCrop">
                         <div class="form-group text-center">
-                            <img src="img/foto.jpg" class="img-responsive retCrop">
+                            <label>Imagem pgn com fundo transparente</label>
+                            <img src="demo/img/logo.png" class="img-responsive retCrop">
+                            <!-- a class .openCrop inicia a função -->
                             <!-- botão para adicionar a nova imagem -->
-                            <a href="#myForm" class="btn btn-info openCrop pull-right">
+                            <a href="#myForm1" class="btn btn-info openCrop">
                                 <i class="glyphicon glyphicon-picture"></i> Alterar Imagem
                             </a>
                             <!-- o botão não precisa estar dentro do formulário -->
-                            <!-- a class .openCrop inicia a função -->
-                            <!-- basta colocar no href o id do form que contem: cropSize, cropPath -->
+                            <!-- basta colocar no href o id do form que contem: inputFile, sizecut, filePath -->
                         </div>
                         <div class="hidden">
-                            <!-- cropAccept: quais tipos de arquivo são aceitos -->
-                            <!-- se nenhum valor for passado default: .jpg,.jpeg,.png  -->
-                            <input type="text" name="cropAccept" value=".jpg,.png">
-
-                            <!-- cropSize: o tamanho que a imagem final deve ter -->
+                            <input type="file" name="inputFile" accept="image/.png">
+                            <!-- sizecut: o tamanho que a imagem final deve ter -->
+                            <input type="text" name="sizecut" value="500x150">
                             <!-- dimensões do corte width x height -->
-                            <input type="text" name="cropSize"  value="500x150">
 
-                            <!-- cropPath: o caminho de destino onde o arquivo será salvo -->
+                            <!-- filePath: o caminho de destino onde o arquivo será salvo -->
+                            <input type="text" name="filePath" value="foto/imgs/logo.png">
                             <!-- diretório e nome do arquivo -->
-                            <input type="text" name="cropPath"  value="foto/imgs/crop.jpg">
                         </div>
                     </form>
                 </div>
