@@ -134,7 +134,8 @@ $('#myForm').on('started', function(event) {
 ```
 Chamado imediatamente após iniciado.
 
-+ **fileadd**
+fileadd
+-------------------------------
 Called immediately after each image is uploaded.<br>
 Gets the file as second parameter
 
@@ -146,7 +147,8 @@ $('#myForm').on('fileadd', function(event, file) {
 Chamado imediatamente após cada imagem ser carregada.<br>
 Obtém o objeto file como segundo parâmetro
 
-+ **fileremoved**
+fileremoved
+-------------------------------
 Called immediately after each image is removed.<br>
 Gets the file as second parameter
 
@@ -158,7 +160,8 @@ $('#myForm').on('fileremoved', function(event, file) {
 Chamado imediatamente após cada imagem ser removida.<br>
 Obtém o objeto file como segundo parâmetro.
 
-+ **sending**
+sending
+-------------------------------
 Called before the file was sent.<br>
 Gets the formData objects as the second parameter,<br>
 So that you can modify it (for example, to change the destination path 'cropPath') or add additional data.
@@ -171,7 +174,8 @@ Chamado antes de enviado o arquivo.<br>
 Obtém o objetos formData como segundo parâmetro, 
 para que você possa modificá-lo (por exemplo, para alterar o caminho de destino 'cropPath') ou adicionar dados adicionais.
 
-+ **fileprogress**
+fileprogress
+-------------------------------
 Called whenever upload progress changes.<br>
 Parameters file, progs: percentage progress (0-100)
 ```
@@ -182,7 +186,8 @@ $('#myForm').on('fileprogress', function(event, file, progs) {
 chamado sempre que o progresso do upload mudar<br>
 parâmetros file, progs: o progresso porcentagem (0-100)
 
-+ **success**
+success
+-------------------------------
 Called when the upload is completed, successfully or with error. <br>
 Gets the file object sent as second argument <br>
 Gets the response from the server as the third argument.
@@ -224,17 +229,21 @@ Chamado quando o upload for concluído, com sucesso ou com erro.<br>
 Obtém o objeto file enviado como segundo argumento<br>
 Obtém a resposta do servidor como terceiro argumento.
 
-- ** Multiple files **
+Multiple files
+-------------------------------
 
-+ **filesadded**
+filesadded
+-------------------------------
 After all images are loaded
 chamado após todas as imagens serem carregadas
 
-+ **filesremoved**
+filesremoved
+-------------------------------
 After all images are removed
 chamado após todas as imagens serem removidas
 
-+ **complete**
+complete
+-------------------------------
 After all images are saved
 chamado após todas as imagens serem salvas
 
