@@ -97,36 +97,63 @@ o cropAccept deve ser '.png' e o cropPath deve terminar com '.png'
 Event list
 -------------------------------
 
++ **started**
+Called immediately after started.
+```
+$('#myForm').on('started', function(event) {
+    //
+});
+Chamado imediatamente após iniciado.
+
++ **fileadd**
+Called immediately after each image is uploaded.<br>
+Gets the file as second parameter
+
+```
+$('#myForm').on('fileadd', function(event, file) {
+     //...
+});
+```
+Chamado imediatamente após cada imagem ser carregada.<br>
+Obtém o objeto como segundo parâmetro
+
++ **filesadded**
+chamado apos todas as imagens serem carregadas
++ **fileremoved**
+chamado apos cada imagem ser removida
++ **filesremoved**
+chamado apos todas as imagens serem removidas
+
 + **sending**
-
-Called immediately before each file is sent.<br>
-Gets the formData objects as the second parameter, 
+Called before the file was sent.<br>
+Gets the formData objects as the second parameter,<br>
 So that you can modify it (for example, to change the destination path 'cropPath') or add additional data.
-
 ```
 $('#myForm').on('sending', function(event, formData) {
     formData.append('cropPath', 'foto/imgs/crop.jpg');
 });
 ```
-Chamado imediatamente antes de cada arquivo ser enviado.<br>
-Obtém os objetos formData como segundo parâmetro, 
+Chamado antes de enviado o arquivo.<br>
+Obtém o objetos formData como segundo parâmetro, 
 para que você possa modificá-lo (por exemplo, para alterar o caminho de destino 'cropPath') ou adicionar dados adicionais.
-	
-+ **complete**
 
-Called when the upload is complete, successful or erroneous.<br>
-Gets the response from the server as the second argument. 
++ **fileprogress**
+Called whenever upload progress changes.<br>
+Parameters file, progs: percentage progress (0-100)
 ```
-$('#myForm').on('complete', function(event, ret) {
-    ret.dir = 'foto/imgs/'; //diretório onde a imagem foi salva
-    ret.fileName = 'crop.jpg'; //nome do arquivo
-    ret.path = 'foto/imgs/crop.jpg'; //caminho completo da imagem
-    ret.status = 'ok ou erro';
-    ret.coffin = ''; //em caso de erro, mensagem de erro
+$('#myForm').on('fileprogress', function(event, file, progs) {
+   //...
 });
 ```
-Chamado quando o upload for concluído, com sucesso ou com erro.<br>
-Obtém a resposta do servidor como o segundo argumento.
+chamado sempre que o progresso do upload mudar<br>
+parâmetros file, progs: o progresso porcentagem (0-100)
+
++ **complete**
+chamado apos todas as imagens serem salvas
+
++ **success**
+chamada apos salva a nova imagem,
+
 
 License
 -------------------------------
