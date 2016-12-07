@@ -57,7 +57,31 @@ HTMl:
     </body>
 </html>
 ```
+
 + **Basic**
+```
+<form id="myForm2" class="formCrop">
+    <div class="form-group text-center">
+        <label>Redimensionar Imagem </label>
+        <a href="demo/img/img.jpg" class="retCrop">
+            <img src="demo/img/img.jpg" class="img-responsive">
+        </a>
+        <a href="#myForm2" class="btn btn-info openCrop">
+            <i class="glyphicon glyphicon-picture"></i> Alterar Imagem
+        </a>
+        <a href="#" class="btn btn-primary fcSubmit">
+            <i class="glyphicon glyphicon-cloud-upload"></i> Salvar
+        </a>
+    </div>
+    <div class="hidden">
+        <input type="file" name="inputFile" accept="image/*">
+        <input type="text" name="sizecut" value="813x538">
+        <input type="text" name="filePath" value="foto/imgs/crop.jpg">
+    </div>
+</form>
+```
+
++ **Show Crop**
 ```
 <form id="myForm1" class="formCrop">
     <div class="form-group text-center">
@@ -81,6 +105,9 @@ HTMl:
     </div>
 </form>
 ```
+
+
+
 Options
 -------------------------------
 + **transparent**
@@ -101,7 +128,7 @@ Event list
 Called immediately after started.
 ```
 $('#myForm').on('started', function(event) {
-     /* ... */
+    // ...
 });
 ```
 Chamado imediatamente após iniciado.
@@ -112,18 +139,23 @@ Gets the file as second parameter
 
 ```
 $('#myForm').on('fileadd', function(event, file) {
-     //...
+     // ...
 });
 ```
 Chamado imediatamente após cada imagem ser carregada.<br>
-Obtém o objeto como segundo parâmetro
+Obtém o objeto file como segundo parâmetro
 
-+ **filesadded**
-chamado apos todas as imagens serem carregadas
 + **fileremoved**
-chamado apos cada imagem ser removida
-+ **filesremoved**
-chamado apos todas as imagens serem removidas
+Called immediately after each image is removed.<br>
+Gets the file as second parameter
+
+```
+$('#myForm').on('fileremoved', function(event, file) {
+     // ...
+});
+```
+Chamado imediatamente após cada imagem ser removida.<br>
+Obtém o objeto file como segundo parâmetro.
 
 + **sending**
 Called before the file was sent.<br>
@@ -143,17 +175,67 @@ Called whenever upload progress changes.<br>
 Parameters file, progs: percentage progress (0-100)
 ```
 $('#myForm').on('fileprogress', function(event, file, progs) {
-   //...
+   // ...
 });
 ```
 chamado sempre que o progresso do upload mudar<br>
 parâmetros file, progs: o progresso porcentagem (0-100)
 
-+ **complete**
-chamado apos todas as imagens serem salvas
-
 + **success**
-chamada apos salva a nova imagem,
+Called when the upload is completed, successfully or with error. <br>
+Gets the file object sent as second argument <br>
+Gets the response from the server as the third argument.
+```
+$('#myForm').on('success', function(event, file, retorno) {
+    retorno = {
+        // caminho completo da nova imagem
+        path: "foto/galeria/img/foto.jpg",
+    
+        //se thumbnail for definido
+        // caminho completo da nova thumbnail
+        tmb: "foto/galeria/tmb/foto.jpg",
+
+        // se a imagem enviada e o destino são válidos
+        stts: true,
+
+        // status do retorno "ok" ou "erro"
+        status: "ok",
+
+        //em caso de erro, a mensagem de erro
+        coffin: "",
+
+        // diretório real onde a imagem foi salva
+        dir: "../../foto/galeria/img/",
+
+        // real path da nova imagem
+        dirPath: "../../foto/galeria/img/foto.jpg"
+    }
+    file: {
+        name: "imagem.jpg"
+        preview: "div.ic-preview.ic-image-preview"
+        size: 249971,
+        status: "success",
+        type: "image/jpeg"
+    }
+});
+```
+Chamado quando o upload for concluído, com sucesso ou com erro.<br>
+Obtém o objeto file enviado como segundo argumento<br>
+Obtém a resposta do servidor como terceiro argumento.
+
+- ** Multiple files **
+
++ **filesadded**
+After all images are loaded
+chamado após todas as imagens serem carregadas
+
++ **filesremoved**
+After all images are removed
+chamado após todas as imagens serem removidas
+
++ **complete**
+After all images are saved
+chamado após todas as imagens serem salvas
 
 
 License
