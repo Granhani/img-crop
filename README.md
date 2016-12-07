@@ -101,8 +101,9 @@ Event list
 Called immediately after started.
 ```
 $('#myForm').on('started', function(event) {
-    //
+     /* ... */
 });
+```
 Chamado imediatamente após iniciado.
 
 + **fileadd**
