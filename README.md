@@ -124,7 +124,7 @@ o cropAccept deve ser '.png' e o cropPath deve terminar com '.png'
 Event list
 ==================================
 
-+ **started**
+started
 -------------------------------
 Called immediately after started.
 ```
