@@ -122,9 +122,10 @@ para que a imagem final seja salva com fundo transparente.<br>
 o cropAccept deve ser '.png' e o cropPath deve terminar com '.png'
 
 Event list
--------------------------------
+==================================
 
 + **started**
+-------------------------------
 Called immediately after started.
 ```
 $('#myForm').on('started', function(event) {
