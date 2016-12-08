@@ -120,24 +120,7 @@ $('#myForm').icrop({
     fixRatio: null, // manter aspectRatio
 });
 ```
-
-accept: null, // extensões aceitas, default = '.jpg,.jpeg,.png'
-    filePath: null, // caminho completo da nova imagem
-    autosend: null, // enviar automaticamente após carregar a imagem
-
-    multiple: null, // multiplas imagem?, se null pega a informção input file
-    maxfiles: null, // limitar a quantidade de imagem
-    qntfiles: 0, // quantidade de imagem já adicionadas
-    //
-    showsize: null, // mostrar no form a opção de redimensionar
-    showcrop: null, // se false redimenciona direto, sem exibir a área de seleção 
-    fixRatio: null, // manter aspectRatio, null = fica a criterio do usuario
-    sizecut: null, // tamanho que a imagem deve ser salva
-    sizetmb: null, // tamanho que o thumbnail deve ser salvo
-    seloPath: null, // caminho completo do selo
-    seloFix: null // Posição onde o selo deve ser fixado
-
-se o valor for == null, busca a informação no form, ex:<br>
+se o valor for == null, busca a informação no form, ex: <br>
 se accept: null, pega o accept do input file
 
 transparent
