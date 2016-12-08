@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row rowCrop opct0">
+        <div class="col-xs-12 col-sm-8 col-md-9">
+            <div id="colCrop" class="colCrop">
+                <div id="divCrop" class="">
+                    <img src="src/imgcrop/img/img.jpg" class="imgCrop">
+                </div>
+            </div>
+        </div>
+        <div class="colCrop col-xs-12 col-sm-4 col-md-3">
+            <form id="cropForm" class="form-bordered">
+                <div class="form-group shwSize">
+                    <label class="control-label">Tamanho Final</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-resize-horizontal"></i>
+                        </span>
+                        <input type="text" id="cwidth" class="form-control cpRatio cwidth" value="1024">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-resize-vertical"></i>
+                        </span>
+                        <input type="text" id="cheight" class="form-control cpRatio cheight" value="678">
+                        <span class="input-group-addon">px</span>
+                    </div>
+                </div>
+                <div class="form-group shwSize">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <input type="checkbox" id="fixRatio" class="fixRatio" checked="" value="1">
+                        </span>
+                        <p class="form-control">Manter Proporção</p>
+                    </div>
+                </div>
+                <div class="form-group form-actions">
+                    <a href="#" id="fcSubmit" class="btn btn-primary icEvt disabled"><i class="glyphicon glyphicon-cloud-upload"></i> Salvar</a>
+                    <a href="#" id="fcOpen" class="btn btn-info icEvt"><i class="glyphicon glyphicon-picture"></i> Alterar<span class="hidden-ms"> Imagem</span></a>
+                    <a href="#" id="closeCrop" class="btn btn-warning icEvt"><i class="glyphicon glyphicon-refresh"></i> Cancelar</a>
+                </div>
+                <div class="hidden">
+                    <input type="text" id="fc_path" name="filePath" value="">
+                    <input type="text" id="fc_acao" name="acao" value="cropImg">
+                    <!--  -->
+                    <input type="checkbox" id="c_ratio" name="cratio" class="fixRatio" checked="" value="1">
+                    <input type="text" id="c_width" name="cwidth" class="cwidth" value="1024">
+                    <input type="text" id="c_height" name="cheight" class="cheight" value="678">
+                    <input type="text" id="i_width" name="iwidth" value="">
+                    <input type="text" id="i_height" name="iheight" value="">
+                    <input type="text" id="d_width" name="dwidth" value="">
+                    <input type="text" id="d_height" name="dheight" value="">
+                    <input type="text" id="d_top" name="dtop" value="">
+                    <input type="text" id="d_left" name="dleft" value="">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
